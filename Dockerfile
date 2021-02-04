@@ -1,8 +1,5 @@
 FROM node:14-alpine
 
-ENV URL
-ENV TOKEN
-
 WORKDIR /usr/app
 
 COPY . .
