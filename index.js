@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const LOCALES = {
   'de-de': 'Germany',
-  'fr-fr': 'Baguette',
+  'fr-fr': 'France',
 };
 
 const token = process.env.TOKEN;
