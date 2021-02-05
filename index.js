@@ -12,6 +12,7 @@ const LOCALES = {
 
 const token = process.env.TOKEN;
 const url = process.env.URL;
+const scheme = process.env.SCHEME || 'https';
 
 const interval = 30;
 let PRODUCTS = [];
@@ -150,7 +151,7 @@ function removeCallback(bot, callbackData, chat_id, message_id) {
 function startTelegram() {
   // Create a bot that uses 'polling' to fetch new updates
   const bot = new TelegramBot(token, {polling: !url});
-  if (url) bot.setWebHook(url);
+  if (url) bot.setWebHook(`${scheme}://${url}`);
 
   bot.onText(/\/start/, msg => {
     const message = `
