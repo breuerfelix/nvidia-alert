@@ -50,14 +50,9 @@ async function loop(bot) {
       const product = db.get('products').find({id: newOne.productID}).value();
       const {locale, websiteLink, displayName, prdStatus} = newOne;
 
-      console.log('updated status:')
-      console.log(old)
-      console.log(newOne)
-
       for (const user of product.users) {
         const message = `
-Status update!!
-${LOCALES[locale]} - ${displayName}
+UPDATE: ${LOCALES[locale]} - ${displayName}
 New Status: ${prdStatus}
 Link to the store: ${websiteLink}
         `;
