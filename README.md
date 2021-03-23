@@ -38,7 +38,7 @@ TOKEN=<telegram bot token> node index.js
 
 ## TODO
 
-- [] Use webhook instead of polling
-- [] Figure out which languages are available
-- [] Screenshots from Telegram Bot
-- [] Add other languages
+- [ ] Use webhook instead of polling
+- [ ] Figure out which languages are available
+- [ ] Screenshots from Telegram Bot
+- [ ] Add other languages

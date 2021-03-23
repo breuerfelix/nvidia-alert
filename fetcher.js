@@ -1,13 +1,12 @@
 const fetch = require('node-fetch');
-const fs = require('fs');
 const {sleep} = require('./utils');
 
 function constructLink(locale) {
   const queryParam = `?page=1&limit=9&locale=${locale}&manufacturer=NVIDIA&manufacturer_filter=NVIDIA~5`;
 
   const websiteLink = `https://www.nvidia.com/${locale}/shop/geforce/` + queryParam;
-
   const productLink = 'https://api.nvidia.partners/edge/product/search' + queryParam;
+
   return {productLink, websiteLink};
 }
 

@@ -34,7 +34,14 @@ async function fetchNew() {
 async function loop(bot) {
   while (true) {
     await sleep(interval);
-    const oldProducts = await fetchNew();
+    let oldProducts = [];
+
+    try {
+      oldProducts = await fetchNew();
+    } catch (e) {
+      console.log('Exception in fetching:', e)
+      continue
+    }
 
     for (const old of oldProducts) {
       const newOne = PRODUCTS.find(prd => prd.productID == old.productID);
@@ -42,6 +49,7 @@ async function loop(bot) {
 
       const product = db.get('products').find({id: newOne.productID}).value();
       const {locale, websiteLink, displayName, prdStatus} = newOne;
+
       console.log('updated status:')
       console.log(old)
       console.log(newOne)
