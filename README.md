@@ -42,3 +42,5 @@ TOKEN=<telegram bot token> node index.js
 - [ ] Figure out which languages are available
 - [ ] Screenshots from Telegram Bot
 - [ ] Add other languages
+- [ ] Send Errors to Admin
+- [ ] Refactor Callback
